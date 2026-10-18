@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Starz | Premier Coaching for JEE, NEET & Foundation</title>
+    <meta name="description" content="Rising Starz - Premier coaching for JEE, NEET & Foundation. Expert mentorship, scholarship tests, top rank results, and batch timings. Enroll today!">
+    <meta name="keywords" content="JEE coaching, NEET coaching, foundation classes, Rising Starz, IIT JEE, NEET medical, scholarship test, Kota coaching">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://*.firebaseio.com https://*.firebasedatabase.app https://www.googleapis.com https://securetoken.googleapis.com https://script.google.com; frame-src 'none'; base-uri 'self'; form-action 'self';">
+    <link rel="canonical" href="https://risingstarz.example.com/spark.html">
+    <link rel="sitemap" href="/sitemap.xml">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://risingstarz.example.com/spark.html">
+    <meta property="og:title" content="Rising Starz | Premier Coaching for JEE, NEET & Foundation">
+    <meta property="og:description" content="Rising Starz - Premier coaching for JEE, NEET & Foundation. Expert mentorship, scholarship tests, top rank results. Enroll today!">
+    <meta property="og:site_name" content="Rising Starz">
+    <meta property="og:image" content="https://risingstarz.example.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://risingstarz.example.com/spark.html">
+    <meta name="twitter:title" content="Rising Starz | Premier Coaching for JEE, NEET & Foundation">
+    <meta name="twitter:description" content="Rising Starz - Premier coaching for JEE, NEET & Foundation. Expert mentorship, scholarship tests, top rank results. Enroll today!">
+    <meta name="twitter:image" content="https://risingstarz.example.com/assets/og-image.jpg">
+    
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Leaflet OpenStreetMap -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- FIREBASE SDKs & AUTH LOGIC -->
+    <script type="module" src="js/firebase-auth.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        
+        /* DARK MODE STYLES */
+        html.dark body { background-color: #020617; color: #f8fafc; }
+        html.dark .theme-card { background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.1); }
+        html.dark .theme-header { background-color: rgba(2, 6, 23, 0.9); border-color: #1e293b; }
+        html.dark .theme-text-muted { color: #94a3b8; }
+        html.dark .theme-input { background-color: #1e293b; border-color: #334155; color: #ffffff; }
+        html.dark .agent-window-bg { background-color: #0f172a !important; border: 1px solid #334155; }
+
+        /* LIGHT MODE STYLES */
+        html.light body { background-color: #f8fafc; color: #0f172a; }
+        html.light .theme-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05); }
+        html.light .theme-header { background-color: rgba(255, 255, 255, 0.95); border-color: #e2e8f0; }
+        html.light .theme-text-muted { color: #64748b; }
+        html.light .theme-input { background-color: #f1f5f9; border-color: #cbd5e1; color: #0f172a; }
+        html.light .agent-window-bg { background-color: #ffffff !important; border: 1px solid #cbd5e1; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+
+        .nav-btn-active {
+            color: #1e3a8a !important;
+            background-color: rgba(99, 102, 241, 0.15) !important;
+            font-weight: 800 !important;
+            border-bottom: 2px solid #1e3a8a;
+        }
+
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .animate-marquee { display: inline-block; white-space: nowrap; animation: marquee 28s linear infinite; }
+        .animate-marquee:hover { animation-play-state: paused; }
+
+        @keyframes pulseGlow { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5)); } 50% { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.8)); } }
+        .animate-logo-pulse { animation: pulseGlow 2s ease-in-out infinite; }
+        @keyframes loadBar { 0% { width: 0%; } 100% { width: 100%; } }
+        .animate-load-bar { animation: loadBar 2.0s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+    </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Rising Starz",
+        "url": "https://risingstarz.example.com/spark.html",
+        "logo": "https://risingstarz.example.com/assets/logo.png",
+        "image": "https://risingstarz.example.com/assets/og-image.jpg",
+        "description": "Premier coaching for JEE, NEET & Foundation. Expert mentorship, scholarship tests, and top rank results.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 42, Kalu Sarai, Hauz Khas",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110016",
+            "addressCountry": "IN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-1800-123-7727",
+            "contactType": "admissions",
+            "availableLanguage": ["English", "Hindi"]
+        },
+        "sameAs": [
+            "https://risingstarz.example.com"
+        ],
+        "educationalProgramAudience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student"
+        }
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-white focus:rounded-lg focus:font-bold">Skip to main content</a>
+
+    <!-- INTRO SPLASH SCREEN -->
+    <div id="intro-splash" class="fixed inset-0 z-50 bg-slate-950 flex flex-col items-center justify-center p-4 transition-opacity duration-700 ease-in-out">
+        <div class="text-center space-y-6 max-w-sm w-full">
+            <div class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-brand-600 to-yellow-400 flex items-center justify-center text-white shadow-2xl animate-logo-pulse">
+                <i class="fa-solid fa-bolt text-4xl"></i>
+            </div>
+            <div class="space-y-1">
+                <h1 class="text-3xl font-extrabold tracking-wider bg-gradient-to-r from-brand-400 via-red-300 to-yellow-400 bg-clip-text text-transparent">RISING STARZ</h1>
+                <p class="text-xs text-slate-400 tracking-widest uppercase font-semibold">Igniting Minds • Achieving Ranks</p>
+            </div>
+            <div class="w-48 h-1.5 bg-slate-800 rounded-full mx-auto overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-brand-500 to-yellow-400 animate-load-bar rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container" class="fixed top-20 right-5 z-50 flex flex-col gap-3 pointer-events-none" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 theme-header backdrop-blur-md border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-yellow-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-brand-400 to-yellow-400 bg-clip-text text-transparent">RISING</span>
+                        <span class="text-xs block font-bold theme-text-muted tracking-widest -mt-1">STARZ</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-1 font-semibold text-sm" aria-label="Main navigation">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-btn nav-btn-active px-4 py-2 rounded-lg transition" aria-controls="tab-home" aria-selected="true">Home</button>
+                    <button onclick="switchTab('about')" id="nav-about" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-about" aria-selected="false">About Us</button>
+                    <button onclick="switchTab('courses')" id="nav-courses" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-courses" aria-selected="false">Courses</button>
+                    <button onclick="switchTab('centers')" id="nav-centers" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-centers" aria-selected="false">Centers</button>
+                    <button onclick="switchTab('reviews')" id="nav-reviews" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-reviews" aria-selected="false">Reviews</button>
+                    <button onclick="switchTab('gallery')" id="nav-gallery" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-gallery" aria-selected="false">Gallery</button>
+                    <button onclick="switchTab('resources')" id="nav-resources" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-resources" aria-selected="false">Resources</button>
+                    <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn px-4 py-2 rounded-lg theme-text-muted hover:text-brand-400 transition" aria-controls="tab-contact" aria-selected="false">Contact Us</button>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleSearchModal()" class="p-2.5 rounded-xl theme-card text-brand-400 hover:scale-105 transition" aria-label="Open search" aria-controls="search-modal" aria-expanded="false">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl theme-card text-yellow-400 hover:scale-105 transition" aria-label="Toggle dark mode" aria-pressed="false">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <button id="auth-guest-btn" onclick="openAuthModal('login')" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl font-extrabold text-sm bg-gradient-to-r from-brand-600 to-brand-600 hover:from-brand-500 hover:to-brand-500 text-white shadow-lg shadow-brand-500/25 transition hover:scale-105" aria-label="Login or Register">
+                        <i class="fa-solid fa-user-lock mr-2"></i>Login
+                    </button>
+
+                    <div id="auth-user-menu" class="relative hidden">
+                        <button onclick="toggleUserDropdown()" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-600/20 border border-brand-500/40 text-brand-400 font-bold text-sm" aria-expanded="false" aria-controls="user-dropdown">
+                            <i class="fa-solid fa-circle-user text-lg"></i>
+                            <span id="user-name-display" class="hidden sm:inline truncate max-w-[120px]">Hi, Student</span>
+                            <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-48 rounded-2xl theme-card shadow-2xl p-2 z-50" role="menu" aria-label="User actions">
+                            <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold text-red-400 hover:bg-red-500/10 flex items-center gap-2" role="menuitem">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl theme-card text-brand-400 text-lg" aria-expanded="false" aria-controls="mobile-menu">
+                        <i id="hamburger-icon" class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden theme-card border-t px-4 py-4 space-y-2" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+            <button onclick="toggleSearchModal(); toggleMobileMenu();" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted flex items-center gap-2" aria-label="Search Resources">
+                <i class="fa-solid fa-magnifying-glass"></i> Search Resources
+            </button>
+            <button onclick="switchTab('home'); toggleMobileMenu();" id="mobile-nav-home" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm nav-btn-active" aria-selected="true">Home</button>
+            <button onclick="switchTab('about'); toggleMobileMenu();" id="mobile-nav-about" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">About Us</button>
+            <button onclick="switchTab('courses'); toggleMobileMenu();" id="mobile-nav-courses" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Courses</button>
+            <button onclick="switchTab('centers'); toggleMobileMenu();" id="mobile-nav-centers" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Centers</button>
+            <button onclick="switchTab('reviews'); toggleMobileMenu();" id="mobile-nav-reviews" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Reviews</button>
+            <button onclick="switchTab('gallery'); toggleMobileMenu();" id="mobile-nav-gallery" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Gallery</button>
+            <button onclick="switchTab('resources'); toggleMobileMenu();" id="mobile-nav-resources" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Resources</button>
+            <button onclick="switchTab('contact'); toggleMobileMenu();" id="mobile-nav-contact" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm theme-text-muted" aria-selected="false">Contact Us</button>
+            <button onclick="openAuthModal('login'); toggleMobileMenu();" class="block sm:hidden w-full text-left px-4 py-2.5 rounded-xl font-bold text-sm bg-brand-600 text-white mt-2">Login / Register</button>
+        </div>
+    </header>
+
+    <!-- News Ticker Strip -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-yellow-500 text-white py-2.5 px-4 overflow-hidden relative shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center">
+            <div class="flex items-center gap-1.5 bg-slate-950/40 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-extrabold tracking-wider uppercase shrink-0 mr-4 z-10 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+                <span>Updates</span>
+            </div>
+            <div class="overflow-hidden whitespace-nowrap w-full relative">
+                <div class="animate-marquee text-xs sm:text-sm font-semibold flex items-center gap-12">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-bullhorn text-yellow-300"></i> Admissions Open for Class 6th to 12th Batches (JEE, NEET & Foundation)</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-star text-yellow-300"></i> Congratulations to our JEE Advanced Toppers! 450+ selections in top IITs.</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-calendar-check text-yellow-300"></i> Free Counseling & Batch Registration available at all offline centers.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-grow">
+        <!-- ================= HOME TAB ================= -->
+        <section id="tab-home" class="tab-content">
+            <!-- Fixed Cinematic Hero Carousel Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                    <div id="carousel-slides" class="w-full relative">
+                        
+                        <!-- Slide 1: JEE Advanced -->
+                        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-700 bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 md:py-28 flex flex-col justify-center" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.85) 60%, rgba(79, 70, 229, 0.4) 100%), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');">
+                            <div class="max-w-xl space-y-4 z-10 relative">
+                                <span class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-yellow-400 text-slate-950 uppercase tracking-wider inline-block">JEE MAIN & ADVANCED 2026</span>
+                                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Crack IIT-JEE with India’s Top Rankers Mentorship</h1>
+                                <p class="text-xs sm:text-sm md:text-base text-slate-200">Comprehensive offline and hybrid batches with personalized mentorship & daily doubt counters.</p>
+                                <div class="pt-3 flex flex-wrap gap-3">
+                                    <button onclick="switchTab('courses')" class="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-brand-600 hover:bg-brand-500 text-white shadow-xl transition">Explore Batches</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: NEET Medical -->
+                        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 md:py-28 flex flex-col justify-center pointer-events-none" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.85) 60%, rgba(16, 185, 129, 0.4) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80');">
+                            <div class="max-w-xl space-y-4 z-10 relative">
+                                <span class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-red-400 text-slate-950 uppercase tracking-wider inline-block">NEET UG MEDICAL 2026</span>
+                                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Score 700+ in NEET with NCERT Masterclass</h1>
+                                <p class="text-xs sm:text-sm md:text-base text-slate-200">100% NCERT line-by-line coverage, dedicated specimen labs, and weekly mock exams.</p>
+                                <div class="pt-3 flex flex-wrap gap-3">
+                                    <button onclick="switchTab('courses')" class="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-red-600 hover:bg-red-500 text-white shadow-xl transition">Medical Batches</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Foundation Classes -->
+                        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 md:py-28 flex flex-col justify-center pointer-events-none" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.85) 60%, rgba(147, 51, 234, 0.4) 100%), url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');">
+                            <div class="max-w-xl space-y-4 z-10 relative">
+                                <span class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-red-400 text-slate-950 uppercase tracking-wider inline-block">CLASS 6 TO 10 FOUNDATION</span>
+                                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Build Rock-Solid Base for Olympiads & NTSE</h1>
+                                <p class="text-xs sm:text-sm md:text-base text-slate-200">Analytical skill building, Olympiad problem sets, and board exam mastery starting from Class 6.</p>
+                                <div class="pt-3 flex flex-wrap gap-3">
+                                    <button onclick="switchTab('courses')" class="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-red-600 hover:bg-red-500 text-white shadow-xl transition">Foundation Courses</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: AI Smart Analytics -->
+                        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 md:py-28 flex flex-col justify-center pointer-events-none" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.85) 60%, rgba(217, 119, 6, 0.4) 100%), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80');">
+                            <div class="max-w-xl space-y-4 z-10 relative">
+                                <span class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-yellow-400 text-slate-950 uppercase tracking-wider inline-block">ADVANCED AI LEARNING</span>
+                                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Smart Test Analytics & Weakness Correction</h1>
+                                <p class="text-xs sm:text-sm md:text-base text-slate-200">Our proprietary AI engine pinpoints calculation mistakes and time-per-question metrics after every test.</p>
+                                <div class="pt-3 flex flex-wrap gap-3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Daily Doubt Counters -->
+                        <div class="carousel-slide relative opacity-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 md:py-28 flex flex-col justify-center pointer-events-none" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.85) 60%, rgba(14, 165, 233, 0.4) 100%), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=80');">
+                            <div class="max-w-xl space-y-4 z-10 relative">
+                                <span class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-brand-400 text-slate-950 uppercase tracking-wider inline-block">1-ON-1 MENTORSHIP</span>
+                                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Zero Unresolved Doubts With Daily Counters</h1>
+                                <p class="text-xs sm:text-sm md:text-base text-slate-200">Dedicated teachers available from 8 AM to 8 PM to solve your complex physics, chemistry & math problems.</p>
+                                <div class="pt-3 flex flex-wrap gap-3">
+                                    <button onclick="switchTab('centers')" class="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-brand-600 hover:bg-brand-500 text-white shadow-xl transition">Locate Nearest Center</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 text-white flex items-center justify-center hover:bg-slate-900 border border-slate-700 backdrop-blur-sm transition"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+                    <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 text-white flex items-center justify-center hover:bg-slate-900 border border-slate-700 backdrop-blur-sm transition"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+                        <button onclick="setSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-white opacity-100 transition-all"></button>
+                        <button onclick="setSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+                        <button onclick="setSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+                        <button onclick="setSlide(3)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+                        <button onclick="setSlide(4)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="p-5 rounded-2xl theme-card text-center">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-500">25,000+</h3>
+                        <p class="text-xs sm:text-sm theme-text-muted mt-1">JEE & NEET Selections</p>
+                    </div>
+                    <div class="p-5 rounded-2xl theme-card text-center">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-yellow-400">98.4%</h3>
+                        <p class="text-xs sm:text-sm theme-text-muted mt-1">Board Exam Pass Rate</p>
+                    </div>
+                    <div class="p-5 rounded-2xl theme-card text-center">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-red-400">1:15</h3>
+                        <p class="text-xs sm:text-sm theme-text-muted mt-1">Teacher Student Ratio</p>
+                    </div>
+                    <div class="p-5 rounded-2xl theme-card text-center">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-red-400">50+</h3>
+                        <p class="text-xs sm:text-sm theme-text-muted mt-1">Offline Campuses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHY CHOOSE RISING STARZ -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-500/10 text-brand-400 border border-brand-500/20 inline-block uppercase tracking-wider">THE RISING STARZ ADVANTAGE</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mt-2">Why Choose Rising Starz?</h2>
+                    <p class="text-sm theme-text-muted mt-2">We combine proven classroom pedagogy with modern technology to deliver consistent rank performance year after year.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl theme-card space-y-3 border hover:border-brand-500/50 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">100% Ex-IIT & AIIMS Faculty</h3>
+                        <p class="text-xs theme-text-muted leading-relaxed">Learn directly from mentors who have themselves cracked top exams and mentored AIR Top 100 rankers for over 12+ years.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card space-y-3 border hover:border-yellow-500/50 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Smart AI Test Analytics</h3>
+                        <p class="text-xs theme-text-muted leading-relaxed">Identify precise weak sub-topics, silly calculation mistakes, and time-per-question metrics after every weekly test.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card space-y-3 border hover:border-red-500/50 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Comprehensive Printed DPPs</h3>
+                        <p class="text-xs theme-text-muted leading-relaxed">Curated Daily Practice Problems (DPPs) and multi-level study modules structured from basic concepts to Advanced difficulty.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card space-y-3 border hover:border-red-500/50 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Dedicated Parent Portal</h3>
+                        <p class="text-xs theme-text-muted leading-relaxed">Parents get real-time SMS alerts for attendance, weekly test performance charts, and scheduled PTM updates.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURED STAR FACULTY -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 inline-block uppercase tracking-wider">LEARN FROM THE BEST</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mt-2">Our Chief Mentors</h2>
+                    <p class="text-sm theme-text-muted mt-2">Ex-IITians and AIIMS Doctors dedicated to transforming your conceptual clarity.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl theme-card text-center space-y-3">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-brand-600/30 text-brand-400 flex items-center justify-center text-3xl font-extrabold border-2 border-brand-500">
+                            VK
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Er. Varun Kulkarni</h3>
+                            <p class="text-xs text-brand-400 font-semibold">Senior Physics Mentor (IIT Bombay)</p>
+                        </div>
+                        <p class="text-xs theme-text-muted">14+ years experience training Top 100 AIR rankers in JEE Advanced Mechanics & Electrodynamics.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card text-center space-y-3">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-red-600/30 text-red-400 flex items-center justify-center text-3xl font-extrabold border-2 border-red-500">
+                            AM
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Dr. Anjali Mehta</h3>
+                            <p class="text-xs text-red-400 font-semibold">Head of Biology (AIIMS New Delhi)</p>
+                        </div>
+                        <p class="text-xs theme-text-muted">Specialist in NCERT line-by-line Botany & Zoology dissection with 100% NEET selection track record.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card text-center space-y-3">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-red-600/30 text-red-400 flex items-center justify-center text-3xl font-extrabold border-2 border-red-500">
+                            RG
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Er. Rajesh Gupta</h3>
+                            <p class="text-xs text-red-400 font-semibold">Mathematics HOD (IIT Delhi)</p>
+                        </div>
+                        <p class="text-xs theme-text-muted">Renowned for shortcut problem-solving techniques in Calculus and Algebra for JEE Main & Advanced.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIRECT ENQUIRY & CONTACT CALLOUT -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="p-8 sm:p-10 rounded-3xl theme-card border border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div class="space-y-2 text-center md:text-left">
+                        <h3 class="text-xl sm:text-2xl font-extrabold">Have Questions or Need Course Guidance?</h3>
+                        <p class="text-xs sm:text-sm theme-text-muted">Speak with our senior counselors or send us an inquiry directly today.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 shrink-0 justify-center">
+                        <button onclick="switchTab('contact')" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Direct Inquiry
+                        </button>
+                        <a href="tel:18001237727" class="px-6 py-3 rounded-xl theme-card border border-slate-600 font-bold text-sm flex items-center gap-2 hover:bg-brand-500/10 transition">
+                            <i class="fa-solid fa-phone text-red-400"></i> Call Toll-Free
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQS -->
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold">Frequently Asked Questions</h2>
+                    <p class="text-sm theme-text-muted mt-2">Find quick answers regarding our admission process and teaching methods.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-5 rounded-2xl theme-card space-y-2">
+                        <h4 class="font-bold text-sm sm:text-base flex items-center justify-between">
+                            <span>Which classes do you offer courses for?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-brand-400"></i>
+                        </h4>
+                        <p class="text-xs theme-text-muted">We offer dedicated foundation batches for Classes 6th, 7th, 8th, 9th, and 10th, alongside target JEE & NEET courses for Class 11th, 12th, and Dropper students.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl theme-card space-y-2">
+                        <h4 class="font-bold text-sm sm:text-base flex items-center justify-between">
+                            <span>What is the maximum batch size at Rising Starz?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-brand-400"></i>
+                        </h4>
+                        <p class="text-xs theme-text-muted">To maintain our strict 1:15 teacher-to-student attention ratio, classroom batches are capped at 35–40 students maximum.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl theme-card space-y-2">
+                        <h4 class="font-bold text-sm sm:text-base flex items-center justify-between">
+                            <span>Are daily doubt clearing counters included in the batch fee?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-brand-400"></i>
+                        </h4>
+                        <p class="text-xs theme-text-muted">Yes! Daily 1-on-1 doubt resolution counters (8 AM – 8 PM) are completely free for all enrolled classroom and hybrid students.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT US TAB ================= -->
+        <section id="tab-about" class="tab-content hidden">
+            <div class="relative py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center text-white" style="background-image: linear-gradient(to right, rgba(2, 6, 23, 0.95), rgba(79, 70, 229, 0.8)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');">
+                <div class="max-w-4xl mx-auto text-center space-y-4">
+                    <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-yellow-400/20 text-yellow-300 border border-yellow-400/30">ESTABLISHED IN 2012</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Pioneering Academic Excellence Across India</h1>
+                    <p class="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto">From a single classroom in Delhi to over 50+ state-of-the-art coaching hubs, Rising Starz has transformed competitive entrance prep for over 100,000+ aspirants.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8 rounded-3xl theme-card space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 class="text-xl font-bold">Our Mission</h3>
+                        <p class="text-sm theme-text-muted leading-relaxed">To democratize top-tier coaching for IIT-JEE and NEET by pairing veteran IIT/AIIMS educators with cutting-edge learning technology, ensuring every diligent student achieves their dream rank regardless of location.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl theme-card space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl"><i class="fa-solid fa-eye"></i></div>
+                        <h3 class="text-xl font-bold">Our Vision</h3>
+                        <p class="text-sm theme-text-muted leading-relaxed">To be India’s most trusted academic mentorship platform, recognized for conceptual integrity, compassionate student care, and unmatched selection ratios in premier national universities.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <div class="text-center max-w-xl mx-auto mb-12">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold">Our 14-Year Journey of Ranks</h2>
+                        <p class="text-sm theme-text-muted mt-2">Key milestones that shaped Rising Starz into an industry benchmark.</p>
+                    </div>
+
+                    <div class="relative max-w-4xl mx-auto">
+                        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-brand-500/30 md:-ml-0.5"></div>
+
+                        <div class="space-y-12">
+                            <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-600 border-4 border-slate-900 z-10"></div>
+                                <div class="pl-12 md:pl-0 md:w-1/2 md:pr-12 md:text-right">
+                                    <div class="p-6 rounded-2xl theme-card">
+                                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 inline-block mb-2">2012</span>
+                                        <h4 class="text-lg font-bold">The Foundation</h4>
+                                        <p class="text-xs theme-text-muted mt-1">Founded in Kalu Sarai, New Delhi with 30 ambitious JEE aspirants and 3 ex-IITian mentors.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-600 border-4 border-slate-900 z-10"></div>
+                                <div class="pl-12 md:pl-0 md:w-1/2 md:ml-auto md:pl-12">
+                                    <div class="p-6 rounded-2xl theme-card">
+                                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 inline-block mb-2">2016</span>
+                                        <h4 class="text-lg font-bold">Kota Hub Launch & Top 100 Ranks</h4>
+                                        <p class="text-xs theme-text-muted mt-1">Expanded to Kota, Rajasthan. Achieved first Top 50 AIR in JEE Advanced and 95% NEET qualification rate.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-600 border-4 border-slate-900 z-10"></div>
+                                <div class="pl-12 md:pl-0 md:w-1/2 md:pr-12 md:text-right">
+                                    <div class="p-6 rounded-2xl theme-card">
+                                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 inline-block mb-2">2021</span>
+                                        <h4 class="text-lg font-bold">Hybrid AI Learning System</h4>
+                                        <p class="text-xs theme-text-muted mt-1">Introduced AI-powered test analytics, instant mobile doubt resolution, and hybrid classroom streaming.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-600 border-4 border-slate-900 z-10"></div>
+                                <div class="pl-12 md:pl-0 md:w-1/2 md:ml-auto md:pl-12">
+                                    <div class="p-6 rounded-2xl theme-card">
+                                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 inline-block mb-2">2026</span>
+                                        <h4 class="text-lg font-bold">Pan-India Landmark: 50+ Campuses</h4>
+                                        <p class="text-xs theme-text-muted mt-1">Serving 25,000+ active classroom students across 50 centers with 450+ IIT/AIIMS selections this year alone.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= COURSES TAB ================= -->
+        <section id="tab-courses" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Academic Programs & Batches</h2>
+                <p class="text-sm theme-text-muted mt-2">Click on any course card below to open full details, syllabus, features, and fees.</p>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-6 text-brand-400 flex items-center gap-2"><i class="fa-solid fa-seedling"></i> Junior Foundation Batches (Class 6th to 10th)</h3>
+                <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div onclick="openCourseModal('Class 6th Rising Starz Kids', 'FOUNDATION', '₹25,000 / year', 'Build early analytical thinking, science curiosity, and mental arithmetic drills.', ['Science Fundamentals', 'Mental Ability & Logic', 'Basic Mathematics', 'Fun STEM Lab Activities'], ['Interactive Classroom Coaching', 'Weekly Quiz Series', 'Printed Foundation Module', 'Parent Monthly Updates'])" class="p-5 rounded-2xl theme-card flex flex-col justify-between space-y-3 cursor-pointer hover:border-brand-500 hover:scale-[1.02] transition-all group shadow-md">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-500/20 text-yellow-400">FOUNDATION</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-brand-400 opacity-0 group-hover:opacity-100 transition"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-2 group-hover:text-brand-400 transition">Class 6th Rising Starz Kids</h4>
+                            <p class="text-xs theme-text-muted mt-1">Science & Math interest building, mental speed drills, and logical puzzle solving.</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold text-brand-400">
+                            <span>₹25,000/yr</span>
+                            <span class="text-[11px] underline">View Details &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div onclick="openCourseModal('Class 7th Innovators', 'FOUNDATION', '₹30,000 / year', 'Strengthening core algebraic concepts, physics fundamentals, and school exam toppers prep.', ['Algebra & Geometry', 'Physics Basics', 'Intro to Chemistry', 'Logical Aptitude'], ['Interactive Classroom Coaching', 'Bi-Weekly Tests', 'Printed Module Set', 'Doubt Counter Access'])" class="p-5 rounded-2xl theme-card flex flex-col justify-between space-y-3 cursor-pointer hover:border-brand-500 hover:scale-[1.02] transition-all group shadow-md">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-500/20 text-yellow-400">FOUNDATION</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-brand-400 opacity-0 group-hover:opacity-100 transition"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-2 group-hover:text-brand-400 transition">Class 7th Innovators</h4>
+                            <p class="text-xs theme-text-muted mt-1">Strengthening core algebraic concepts, physics fundamentals, and school exam toppers prep.</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold text-brand-400">
+                            <span>₹30,000/yr</span>
+                            <span class="text-[11px] underline">View Details &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div onclick="openCourseModal('Class 8th Pre-Nurture', 'OLYMPIAD PREP', '₹35,000 / year', 'Advanced problem sets for NSTSE, Olympiads, and early competitive analytical thinking.', ['NSTSE & NMTC Olympiad Math', 'Physics & Chemistry Mechanics', 'Biology Essentials', 'Advanced Mental Ability'], ['Olympiad Problem Worksheets', 'AITS Test Series', 'Dedicated Doubt Faculty', 'Parent Portal Tracking'])" class="p-5 rounded-2xl theme-card flex flex-col justify-between space-y-3 cursor-pointer hover:border-red-500 hover:scale-[1.02] transition-all group shadow-md">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">OLYMPIAD</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-red-400 opacity-0 group-hover:opacity-100 transition"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-2 group-hover:text-red-400 transition">Class 8th Pre-Nurture</h4>
+                            <p class="text-xs theme-text-muted mt-1">Advanced problem sets for NSTSE, Olympiads, and early competitive analytical thinking.</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold text-red-400">
+                            <span>₹35,000/yr</span>
+                            <span class="text-[11px] underline">View Details &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div onclick="openCourseModal('Class 9th Pioneer', 'NTSE / BOARD', '₹40,000 / year', 'In-depth 9th Physics, Chem & Math base aligned directly with Class 11th competitive concepts.', ['NCERT Class 9 Mastery', 'Class 11 Bridge Physics', 'Chemistry Reactions & Atoms', 'Coordinate Geometry & Calculus Prep'], ['Level 1 & Level 2 DPPs', 'Computer Based Mock Tests', 'Daily Doubt Counters', 'Personal Mentor Allocation'])" class="p-5 rounded-2xl theme-card flex flex-col justify-between space-y-3 cursor-pointer hover:border-red-500 hover:scale-[1.02] transition-all group shadow-md">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">NTSE / BOARD</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-red-400 opacity-0 group-hover:opacity-100 transition"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-2 group-hover:text-red-400 transition">Class 9th Pioneer</h4>
+                            <p class="text-xs theme-text-muted mt-1">In-depth 9th Physics, Chem & Math base aligned directly with Class 11th competitive concepts.</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold text-red-400">
+                            <span>₹40,000/yr</span>
+                            <span class="text-[11px] underline">View Details &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div onclick="openCourseModal('Class 10th Pinnacle', 'BOARD & TARGET', '₹45,000 / year', '100% CBSE/ICSE Board exam excellence plus early start to Class 11th JEE/NEET prep.', ['100% Board Class 10th Syllabus', 'Early JEE/NEET Class 11 Bridge', 'NTSE Stage 1 & 2 Revision', 'Sample Board Paper Practice'], ['Board Special Answer Writing Drills', 'AITS All-India Rank Cards', 'Parent PTM Sessions', 'Printed Question Banks'])" class="p-5 rounded-2xl theme-card flex flex-col justify-between space-y-3 cursor-pointer hover:border-red-500 hover:scale-[1.02] transition-all group shadow-md">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">BOARD & TARGET</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-red-400 opacity-0 group-hover:opacity-100 transition"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-2 group-hover:text-red-400 transition">Class 10th Pinnacle</h4>
+                            <p class="text-xs theme-text-muted mt-1">100% CBSE/ICSE Board exam excellence plus early start to Class 11th JEE/NEET prep.</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold text-red-400">
+                            <span>₹45,000/yr</span>
+                            <span class="text-[11px] underline">View Details &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6 text-brand-400 flex items-center gap-2"><i class="fa-solid fa-graduation-cap"></i> Senior JEE & NEET Target Batches (Class 11th & 12th)</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div onclick="openCourseModal('Class 11th JEE / NEET Zenith Program', '2-YEAR INTEGRATED PROGRAM', '₹85,000 / year', 'Complete 2-year integrated coaching building foundational concepts from ground up for JEE Main, Advanced & NEET UG.', ['Physics (Mechanics, Waves, Thermodynamics)', 'Chemistry (Physical, Organic & Inorganic)', 'Mathematics (Calculus, Algebra, Coordinate)', 'Biology (NCERT Botany & Zoology Line-by-Line)'], ['800+ Teaching Hours by Ex-IIT/AIIMS Mentors', 'Weekly CBT Computer Mock Exams', 'Daily 1-on-1 Doubt Counter Access', 'AI Personal Weak Topic Analysis Portal'])" class="p-6 rounded-2xl theme-card space-y-4 flex flex-col justify-between border-l-4 border-brand-500 cursor-pointer hover:scale-[1.01] transition-all group shadow-xl">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-500/20 text-brand-400">2-YEAR PROGRAM</span>
+                                <span class="text-xs text-brand-400 font-bold group-hover:underline">Click for Full Details &rarr;</span>
+                            </div>
+                            <h3 class="text-xl font-bold mt-3 group-hover:text-brand-400 transition">Class 11th JEE / NEET Zenith Program</h3>
+                            <p class="text-sm theme-text-muted mt-2">Complete 2-year integrated coaching building foundational concepts from ground up for JEE Main, Advanced & NEET UG.</p>
+                            <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs space-y-1">
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Physics, Chemistry, Math / Biology Full Syllabus</p>
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Weekly All India Test Series (AITS)</p>
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Daily 1-on-1 Doubt Counter Access</p>
+                            </div>
+                        </div>
+                        <div class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition text-center shadow-md">Click to View Course Card (₹85,000/yr)</div>
+                    </div>
+
+                    <div onclick="openCourseModal('Class 12th & Dropper Velocity Batch', '1-YEAR RANK BOOSTER', '₹90,000 / year', 'High-intensity syllabus completion, NCERT revision masterclasses, and 15+ year PYQ mock test series for top rankers.', ['Full Class 11th Rapid Revision', 'Class 12th Board & Competitive Syllabus', '15+ Years JEE/NEET PYQ Dissection', 'Rank Booster Advanced Problem Sets'], ['1000+ Hours Intensive Classroom Prep', 'National Level Rank Predictor Mock Tests', 'Dedicated AIIMS Doctor & IITian Mentors', 'Special Parent PTM & Attendance Alerts'])" class="p-6 rounded-2xl theme-card space-y-4 flex flex-col justify-between border-l-4 border-red-500 cursor-pointer hover:scale-[1.01] transition-all group shadow-xl">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400">1-YEAR RANK BOOSTER</span>
+                                <span class="text-xs text-red-400 font-bold group-hover:underline">Click for Full Details &rarr;</span>
+                            </div>
+                            <h3 class="text-xl font-bold mt-3 group-hover:text-red-400 transition">Class 12th & Dropper Velocity Batch</h3>
+                            <p class="text-sm theme-text-muted mt-2">High-intensity syllabus completion, NCERT revision masterclasses, and 15+ year PYQ mock test series for top rankers.</p>
+                            <div class="mt-4 pt-4 border-t border-slate-700/50 text-xs space-y-1">
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Class 11 + Class 12 Rapid Revision</p>
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Board Exam Academic Mastery Included</p>
+                                <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Personalized Performance Coaching</p>
+                            </div>
+                        </div>
+                        <div class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition text-center shadow-md">Click to View Course Card (₹90,000/yr)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CENTERS TAB ================= -->
+        <section id="tab-centers" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Rising Starz Offline Learning Centers</h2>
+                <p class="text-sm theme-text-muted mt-2">Tap any center button below to view complete campus details, contact info, and facilities.</p>
+            </div>
+
+            <div class="flex justify-center flex-wrap gap-2 mb-10">
+                <button onclick="filterCenters('all')" id="center-btn-all" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white shadow-md">All Centers</button>
+                <button onclick="filterCenters('kota')" id="center-btn-kota" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Kota</button>
+                <button onclick="filterCenters('delhi')" id="center-btn-delhi" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Delhi NCR</button>
+                <button onclick="filterCenters('bengaluru')" id="center-btn-bengaluru" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Bengaluru</button>
+                <button onclick="filterCenters('hyderabad')" id="center-btn-hyderabad" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Hyderabad</button>
+                <button onclick="filterCenters('mumbai')" id="center-btn-mumbai" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Mumbai</button>
+                <button onclick="filterCenters('ahmedabad')" id="center-btn-ahmedabad" class="center-filter-btn px-4 py-2 rounded-xl text-xs font-bold theme-card hover:bg-brand-500/10">Ahmedabad</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="center-card kota p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Kota Main Campus</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">Flagship</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> Vigyan Nagar, Near City Mall, Kota, Rajasthan 324005</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43210 / 1800-123-7727</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> kota@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 7:00 AM – 9:00 PM (Mon-Sun)</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>50+ Smart Air-Conditioned Classrooms</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Dedicated 24/7 Silent Reading Library</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Daily Doubt Resolution Counters</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+
+                <div class="center-card delhi p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Delhi NCR Campus</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brand-500/20 text-brand-400">Headquarters</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> Plot 42, Kalu Sarai, Near Hauz Khas Metro Gate 2, New Delhi 110016</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43211 / 1800-123-7727</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> delhi@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 7:30 AM – 8:30 PM (Mon-Sun)</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Central AI Testing & Computer Labs</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Parent Discussion Lounge</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>CCTV Monitored Safe Campus</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+
+                <div class="center-card bengaluru p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Bengaluru Hub</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-yellow-500/20 text-yellow-400">South Zone</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> 27th Main Rd, HSR Layout, Sector 1, Opp. Agara Lake, Bengaluru 560102</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43212</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> blr@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 8:00 AM – 8:00 PM (Mon-Sun)</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Digital Hybrid Streaming Studio</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Biology Specimen Science Lab</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>1-on-1 Faculty Mentorship</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+
+                <div class="center-card hyderabad p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Hyderabad Center</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">Telangana</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> Madhapur Metro Pillar 17, HITEC City, Hyderabad 500081</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43213</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> hyd@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 7:30 AM – 8:30 PM</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Biometric Attendance Tracking</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>High-Speed Wi-Fi Test Zone</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+
+                <div class="center-card mumbai p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Mumbai West Hub</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-500/20 text-red-400">Maharashtra</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> SV Road, Opp. Railway Station, Andheri West, Mumbai 400058</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43214</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> mumbai@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 8:00 AM – 8:00 PM</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Air-Conditioned Study Cabins</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Senior AIIMS Faculty Desk</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+
+                <div class="center-card ahmedabad p-6 rounded-3xl theme-card space-y-4 border hover:border-brand-500 transition">
+                    <div class="flex items-center justify-between border-b border-slate-700/40 pb-3">
+                        <h3 class="text-xl font-bold text-brand-400"><i class="fa-solid fa-location-dot mr-2"></i>Ahmedabad Campus</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-yellow-500/20 text-yellow-400">Gujarat</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <p class="theme-text-muted"><strong class="text-slate-200">Address:</strong> SG Highway, Near ISKCON Cross Road, Ahmedabad 380015</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Helpline:</strong> +91 98765 43215</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Email:</strong> ahmedabad@risingstarz.edu.in</p>
+                        <p class="theme-text-muted"><strong class="text-slate-200">Timings:</strong> 8:00 AM – 8:00 PM</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40 text-xs space-y-1">
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>Full Mock Test Series Lab</p>
+                        <p><i class="fa-solid fa-check text-red-400 mr-2"></i>1-on-1 Parent Monthly Meet</p>
+                    </div>
+                    <button onclick="switchTab('contact')" class="w-full py-2.5 rounded-xl bg-brand-600/20 hover:bg-brand-600 text-brand-400 hover:text-white font-bold text-xs transition">Visit & Book Counseling</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= REVIEWS TAB ================= -->
+        <section id="tab-reviews" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Student & Parent Reviews</h2>
+                <p class="text-sm theme-text-muted mt-2">Hear directly from our top rankers and supportive parents across India.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto mb-16">
+                <div id="review-slides-wrapper" class="overflow-hidden rounded-3xl theme-card p-6 sm:p-10 relative min-h-[220px]">
+                    <div class="review-slide block transition-opacity duration-500">
+                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-base sm:text-lg font-medium italic mb-6">"The test analytics at Rising Starz helped me identify my weak chapters in Organic Chemistry. The faculty support in Kota was unparalleled!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-lg">AS</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Aarav Sharma</h4>
+                                <span class="text-xs text-brand-400 font-semibold">AIR 42 - JEE Advanced 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide hidden transition-opacity duration-500">
+                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-base sm:text-lg font-medium italic mb-6">"As a parent, I was concerned about personal attention. Regular progress reports and parent-teacher meetings kept us completely informed."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-lg">RV</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Rajnish Verma</h4>
+                                <span class="text-xs text-red-400 font-semibold">Parent of Ananya (NEET Score 695/720)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide hidden transition-opacity duration-500">
+                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-base sm:text-lg font-medium italic mb-6">"Daily 1-on-1 doubt counters made all the difference. I never had to leave a question unresolved before going home!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-lg">KP</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Kavya Patel</h4>
+                                <span class="text-xs text-red-400 font-semibold">AIR 118 - NEET UG 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="prevReview()" class="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full theme-card flex items-center justify-center shadow-lg hover:scale-110 transition z-10"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+                <button onclick="nextReview()" class="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full theme-card flex items-center justify-center shadow-lg hover:scale-110 transition z-10"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+            </div>
+
+            <!-- Working Video Testimonials Section -->
+            <div class="space-y-6">
+                <div class="text-center max-w-xl mx-auto">
+                    <h3 class="text-xl sm:text-2xl font-bold">Video Testimonials</h3>
+                    <p class="text-xs theme-text-muted mt-1">Watch rankers share their preparation journey at Rising Starz.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl overflow-hidden theme-card group relative cursor-pointer" onclick="openVideoModal('Aarav\'s Journey to AIR 42', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                        <div class="relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-slate-950/40 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center text-lg shadow-xl group-hover:scale-110 transition"><i class="fa-solid fa-play ml-1"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm">Aarav's Journey to AIR 42</h4>
+                            <p class="text-xs theme-text-muted mt-0.5">JEE Advanced Strategy & Doubt Solving</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden theme-card group relative cursor-pointer" onclick="openVideoModal('Ananya\'s NEET 695/720 Story', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                        <div class="relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-slate-950/40 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center text-lg shadow-xl group-hover:scale-110 transition"><i class="fa-solid fa-play ml-1"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm">Ananya's NEET 695/720 Story</h4>
+                            <p class="text-xs theme-text-muted mt-0.5">NCERT Biology Dissection & Revision</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden theme-card group relative cursor-pointer" onclick="openVideoModal('Class 10 Foundation Topper', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                        <div class="relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-slate-950/40 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center text-lg shadow-xl group-hover:scale-110 transition"><i class="fa-solid fa-play ml-1"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm">Class 10 Foundation Topper</h4>
+                            <p class="text-xs theme-text-muted mt-0.5">NTSE & Olympiad Preparation Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY TAB ================= -->
+        <section id="tab-gallery" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Life at Rising Starz</h2>
+                <p class="text-sm theme-text-muted mt-2">Explore our modern infrastructure, felicitation ceremonies, and campus life.</p>
+            </div>
+
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button onclick="filterGallery('all')" class="px-4 py-1.5 rounded-full text-xs font-bold bg-brand-600 text-white shadow-md">All</button>
+                <button onclick="filterGallery('campus')" class="px-4 py-1.5 rounded-full text-xs font-bold theme-card hover:bg-brand-500/10">Campus</button>
+                <button onclick="filterGallery('toppers')" class="px-4 py-1.5 rounded-full text-xs font-bold theme-card hover:bg-brand-500/10">Toppers</button>
+                <button onclick="filterGallery('events')" class="px-4 py-1.5 rounded-full text-xs font-bold theme-card hover:bg-brand-500/10">Events & Labs</button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Original 6 Items -->
+                <div class="gallery-item campus group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Hi-Tech Smart Classrooms', 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Smart Classrooms</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item toppers group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('JEE Advanced Toppers Award', 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Toppers Felicitation</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item events group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Practical Science Lab Work', 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Science Exhibition</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item campus group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Central Student Library', 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Central Library</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item events group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('AIIMS Doctor Mentorship Seminar', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Medical Mentorship</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item campus group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Kota Campus Main Building', 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Kota Campus</span>
+                    </div>
+                </div>
+
+                <!-- 3 NEWLY ADDED GALLERY ITEMS -->
+                <div class="gallery-item events group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Annual Science Olympiad Seminar', 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Olympiad Seminar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item campus group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('Computer CBT Testing Hall', 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>CBT Test Hall</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item toppers group relative rounded-2xl overflow-hidden theme-card aspect-video cursor-pointer" onclick="openGalleryLightbox('National Achiever Medal Ceremony', 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80')">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4">
+                        <span class="text-white font-bold text-sm text-center"><i class="fa-solid fa-expand mr-2"></i>Medal Ceremony</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RESOURCES TAB ================= -->
+        <section id="tab-resources" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-extrabold">Academic Resources</h2>
+                <p class="text-sm theme-text-muted mt-2">Free study materials, previous year papers, and expert guides to boost your exam preparation.</p>
+            </div>
+
+            <!-- Blogs Section -->
+            <div class="mb-16">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+                    <div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-400 flex items-center gap-2"><i class="fa-solid fa-blog"></i> Featured Blogs</h3>
+                        <p class="text-xs theme-text-muted mt-1">SEO-optimized study guides and exam strategies from our mentors.</p>
+                    </div>
+                    <a href="blog-neet-strategy.html" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-lg flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Read All Blogs
+                    </a>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Blog Card 1: NEET Strategy (links to standalone page) -->
+                    <a href="blog-neet-strategy.html" class="group block">
+                        <div class="p-6 rounded-3xl theme-card border hover:border-brand-500 transition duration-300 h-full flex flex-col group-hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-brand-400 transition">NEET 700+ Strategy: Complete Preparation Guide</h4>
+                            <p class="text-xs theme-text-muted mb-4 flex-grow">Master NCERT biology, chemistry, and physics with our proven strategy to score 700+ in NEET UG 2026.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-700/40">
+                                <span class="text-xs font-bold text-brand-400">Read Guide →</span>
+                                <span class="text-xs theme-text-muted">12 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Blog Card 2: JEE Physics -->
+                    <a href="blogs/blog-jee-physics.html" class="group block">
+                        <div class="p-6 rounded-3xl theme-card border hover:border-brand-500 transition duration-300 h-full flex flex-col group-hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl mb-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-atom"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-yellow-400 transition">IIT-JEE Advanced Physics: Mechanics & Electrodynamics</h4>
+                            <p class="text-xs theme-text-muted mb-4 flex-grow">Deep dive into high-weightage physics topics with solved examples and previous year questions.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-700/40">
+                                <span class="text-xs font-bold text-yellow-400">Read Guide →</span>
+                                <span class="text-xs theme-text-muted">10 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Blog Card 3: JEE Chemistry -->
+                    <a href="blogs/blog-chemistry.html" class="group block">
+                        <div class="p-6 rounded-3xl theme-card border hover:border-brand-500 transition duration-300 h-full flex flex-col group-hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-flask"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-red-400 transition">Organic Chemistry Mastery for JEE Main & Advanced</h4>
+                            <p class="text-xs theme-text-muted mb-4 flex-grow">Reaction mechanisms, named reactions, and shortcut techniques to ace organic chemistry.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-700/40">
+                                <span class="text-xs font-bold text-red-400">Read Guide →</span>
+                                <span class="text-xs theme-text-muted">8 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PYQs Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-400 mb-8 flex items-center gap-2"><i class="fa-solid fa-file-pdf"></i> Previous Year Question Papers</h3>
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- JEE Main PYQs -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-brand-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Main 2024</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/jee-main-2024.pdf" download class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-brand-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Main 2023</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/jee-main-2023.pdf" download class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-brand-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Main Sample</h4>
+                        <p class="text-xs theme-text-muted mb-6">Sample practice paper</p>
+                        <a href="pyqs/jee-main-sample.pdf" download class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <!-- NEET PYQs -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">NEET 2024</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/neet-2024.pdf" download class="w-full py-3 rounded-xl bg-yellow-600 hover:bg-yellow-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">NEET 2023</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/neet-2023.pdf" download class="w-full py-3 rounded-xl bg-yellow-600 hover:bg-yellow-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">NEET Sample</h4>
+                        <p class="text-xs theme-text-muted mb-6">Sample practice paper</p>
+                        <a href="pyqs/neet-sample.pdf" download class="w-full py-3 rounded-xl bg-yellow-600 hover:bg-yellow-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <!-- JEE Advanced PYQs -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Advanced 2024</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/jee-advanced-2024.pdf" download class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Advanced 2023</h4>
+                        <p class="text-xs theme-text-muted mb-6">Question paper with solutions</p>
+                        <a href="pyqs/jee-advanced-2023.pdf" download class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">JEE Advanced Sample</h4>
+                        <p class="text-xs theme-text-muted mb-6">Sample practice paper</p>
+                        <a href="pyqs/jee-advanced-sample.pdf" download class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition shadow-md">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Study Notes Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-400 mb-8 flex items-center gap-2"><i class="fa-solid fa-book-open"></i> Chapter-wise Study Notes</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Physics Notes -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Physics Chapter-wise</h4>
+                        <p class="text-xs theme-text-muted mb-4">Mechanics, Thermodynamics, Electrodynamics</p>
+                        <a href="notes/physics-chapterwise.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Physics Formula Sheet</h4>
+                        <p class="text-xs theme-text-muted mb-4">Quick formula reference guide</p>
+                        <a href="notes/physics-formulae.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Physics PYQ Compilation</h4>
+                        <p class="text-xs theme-text-muted mb-4">Previous year questions with answers</p>
+                        <a href="notes/physics-pyq-compilation.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <!-- Chemistry Notes -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Chemistry Chapter-wise</h4>
+                        <p class="text-xs theme-text-muted mb-4">Physical, Organic, Inorganic Chemistry</p>
+                        <a href="notes/chemistry-chapterwise.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Organic Mechanisms</h4>
+                        <p class="text-xs theme-text-muted mb-4">Named reactions & mechanisms</p>
+                        <a href="notes/chemistry-mechanisms.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-yellow-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Inorganic Chemistry</h4>
+                        <p class="text-xs theme-text-muted mb-4">Periodic table & coordination</p>
+                        <a href="notes/chemistry-inorganic.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <!-- Mathematics Notes -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Mathematics Chapter-wise</h4>
+                        <p class="text-xs theme-text-muted mb-4">Calculus, Algebra, Coordinate Geometry</p>
+                        <a href="notes/mathematics-chapterwise.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Calculus Notes</h4>
+                        <p class="text-xs theme-text-muted mb-4">Limits, derivatives, integrals</p>
+                        <a href="notes/mathematics-calculus.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Algebra Notes</h4>
+                        <p class="text-xs theme-text-muted mb-4">Quadratic, complex numbers</p>
+                        <a href="notes/mathematics-algebra.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <!-- Biology Notes -->
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Biology Chapter-wise</h4>
+                        <p class="text-xs theme-text-muted mb-4">Botany & Zoology NCERT Based</p>
+                        <a href="notes/biology-chapterwise.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Biology Diagrams</h4>
+                        <p class="text-xs theme-text-muted mb-4">Important diagram collection</p>
+                        <a href="notes/biology-diagrams.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                    <div class="p-6 rounded-3xl theme-card border flex flex-col items-center text-center group hover:border-red-500 transition">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Biology PYQ Compilation</h4>
+                        <p class="text-xs theme-text-muted mb-4">Last 10 years chapter-wise PYQs</p>
+                        <a href="notes/biology-pyq-compilation.pdf" download class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition text-xs sm:text-base">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT TAB ================= -->
+        <section id="tab-contact" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Contact Us & Visit Campus</h2>
+                <p class="text-sm theme-text-muted mt-2">Have questions? Get in touch with our senior academic counselors.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div class="p-4 rounded-2xl theme-card text-center space-y-1">
+                    <i class="fa-solid fa-phone text-brand-500 text-xl"></i>
+                    <h5 class="font-bold text-xs">Toll-Free Helpline</h5>
+                    <p class="text-xs theme-text-muted">1800-123-7727</p>
+                </div>
+                <div class="p-4 rounded-2xl theme-card text-center space-y-1">
+                    <i class="fa-solid fa-envelope text-yellow-400 text-xl"></i>
+                    <h5 class="font-bold text-xs">Email Admissions</h5>
+                    <p class="text-xs theme-text-muted">info@risingstarz.edu.in</p>
+                </div>
+                <div class="p-4 rounded-2xl theme-card text-center space-y-1">
+                    <i class="fa-solid fa-clock text-red-400 text-xl"></i>
+                    <h5 class="font-bold text-xs">Counseling Hours</h5>
+                    <p class="text-xs theme-text-muted">8:00 AM – 8:00 PM</p>
+                </div>
+                <div class="p-4 rounded-2xl theme-card text-center space-y-1">
+                    <i class="fa-solid fa-comments text-red-400 text-xl"></i>
+                    <h5 class="font-bold text-xs">WhatsApp Support</h5>
+                    <p class="text-xs theme-text-muted">+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-3xl theme-card space-y-4">
+                    <h3 class="text-xl font-bold">Send an Inquiry</h3>
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold theme-text-muted mb-1">Your Full Name</label>
+                            <input type="text" id="contact-name" required class="w-full px-4 py-2.5 rounded-xl theme-input text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold theme-text-muted mb-1">Email Address</label>
+                            <input type="email" id="contact-email" required class="w-full px-4 py-2.5 rounded-xl theme-input text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold theme-text-muted mb-1">Phone Number</label>
+                            <input type="tel" id="contact-phone" required class="w-full px-4 py-2.5 rounded-xl theme-input text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold theme-text-muted mb-1">Target Exam & Course</label>
+                            <select id="contact-course" class="w-full px-4 py-2.5 rounded-xl theme-input text-sm focus:outline-none">
+                                <option>JEE Main & Advanced</option>
+                                <option>NEET Medical</option>
+                                <option>Foundation (Class 6-10)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold theme-text-muted mb-1">Message / Question</label>
+                            <textarea id="contact-message" rows="3" required class="w-full px-4 py-2.5 rounded-xl theme-input text-sm focus:outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition">Submit Request</button>
+                    </form>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-6 rounded-3xl theme-card space-y-2">
+                        <h3 class="text-lg font-bold">National Headquarters</h3>
+                        <p class="text-xs theme-text-muted"><i class="fa-solid fa-location-dot text-brand-400 mr-2"></i>Plot 42, Kalu Sarai, Hauz Khas, New Delhi 110016</p>
+                        <p class="text-xs theme-text-muted"><i class="fa-solid fa-envelope text-brand-400 mr-2"></i>admissions@risingstarz.edu.in</p>
+                        <p class="text-xs theme-text-muted"><i class="fa-solid fa-phone text-brand-400 mr-2"></i>1800-123-7727 (Toll Free)</p>
+                    </div>
+                    <div id="map" class="w-full h-64 rounded-3xl overflow-hidden border border-slate-700"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEARCH MODAL -->
+    <div id="search-modal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[60] hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="theme-card max-w-2xl w-full rounded-3xl shadow-2xl overflow-hidden relative border border-slate-700/80 my-4 sm:my-0">
+            <button onclick="closeSearchModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <div class="p-6 sm:p-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-white">Search Resources</h3>
+                        <p class="text-xs theme-text-muted">Find blogs, study notes, and previous year papers</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold theme-text-muted mb-2 uppercase tracking-wider">Search</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                        <input type="text" id="search-input" placeholder="e.g. NEET strategy, physics notes, JEE PYQ..." class="w-full pl-9 pr-4 py-3 rounded-xl theme-input text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" autocomplete="off" oninput="performSearch()">
+                    </div>
+                    <p id="search-hint" class="mt-2 text-xs theme-text-muted">Type to search blogs, notes, and past papers</p>
+                </div>
+
+                <div id="search-results" class="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                    <!-- Results injected here -->
+                </div>
+
+                <div id="search-empty" class="hidden text-center py-10">
+                    <div class="w-16 h-16 rounded-full bg-slate-800/50 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass text-2xl theme-text-muted"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">No results found</h4>
+                    <p class="text-xs theme-text-muted max-w-xs mx-auto">Try different keywords or browse the Resources section.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE COURSE PRODUCT CARD MODAL -->
+    <div id="course-product-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="theme-card max-w-2xl w-full rounded-3xl shadow-2xl overflow-hidden my-8 relative animate-fade-in border border-slate-700/80">
+            <div class="p-6 bg-gradient-to-r from-brand-700 via-brand-800 to-red-900 text-white relative">
+                <button onclick="closeCourseModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+                <span id="modal-course-badge" class="px-3 py-1 rounded-full text-[10px] font-extrabold bg-yellow-400 text-slate-950 uppercase">TARGET PROGRAM</span>
+                <h2 id="modal-course-title" class="text-2xl sm:text-3xl font-extrabold mt-2">Course Title</h2>
+                <p id="modal-course-fee" class="text-lg font-bold text-yellow-300 mt-1">₹0 / year</p>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6 max-h-[65vh] overflow-y-auto">
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-brand-400 mb-1">Course Overview</h4>
+                    <p id="modal-course-desc" class="text-xs sm:text-sm theme-text-muted leading-relaxed">Detailed description will appear here.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-brand-400 mb-2">Key Subjects Covered</h4>
+                    <div id="modal-course-subjects" class="grid grid-cols-2 gap-2 text-xs"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-brand-400 mb-2">What's Included in Course Pack</h4>
+                    <div id="modal-course-features" class="space-y-1.5 text-xs"></div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center gap-3">
+                    <i class="fa-solid fa-shield-halved text-2xl text-yellow-400"></i>
+                    <div>
+                        <h5 class="text-xs font-bold">100% Academic Satisfaction Guarantee</h5>
+                        <p class="text-[11px] theme-text-muted">Includes free batch transfer options across 50+ offline campuses and 24/7 AI learning app access.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-6 theme-card border-t border-slate-700/50 flex flex-wrap sm:flex-nowrap gap-3">
+                <button onclick="closeCourseModal(); openAuthModal('register');" class="w-full sm:w-1/2 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition shadow-lg">Enroll & Reserve Seat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL FOR IMAGES -->
+    <div id="gallery-lightbox-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="max-w-3xl w-full space-y-4 theme-card p-4 sm:p-6 rounded-3xl">
+            <div class="flex items-center justify-between">
+                <h4 id="lightbox-title" class="font-bold text-base">Photo View</h4>
+                <button onclick="closeGalleryLightbox()" class="theme-text-muted hover:text-brand-400 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <img id="lightbox-img" src="" class="w-full rounded-2xl max-h-[60vh] object-cover">
+            
+            <div class="flex justify-end gap-3 pt-2">
+                <button onclick="shareGalleryPhoto()" class="px-4 py-2 rounded-xl theme-card font-bold text-xs flex items-center gap-2 transition">
+                    <i class="fa-solid fa-share-nodes text-brand-400"></i> Share Photo
+                </button>
+                <a id="lightbox-download-link" href="" download="Rising_Starz_Photo.jpg" target="_blank" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs flex items-center gap-2 transition">
+                    <i class="fa-solid fa-download"></i> Download Photo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUNCTIONAL VIDEO PLAYER MODAL -->
+    <div id="video-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="max-w-3xl w-full space-y-4 theme-card p-4 sm:p-6 rounded-3xl relative">
+            <div class="flex items-center justify-between">
+                <h4 id="video-modal-title" class="font-bold text-base text-brand-400">Video Player</h4>
+                <button onclick="closeVideoModal()" class="theme-text-muted hover:text-brand-400 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black">
+                <iframe id="video-modal-iframe" src="" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING AI FAQ AGENT WIDGET -->
+    <div class="fixed bottom-5 right-5 z-50">
+        <button onclick="toggleAgentWindow()" class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-yellow-400 text-white shadow-2xl flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition-all group">
+            <i class="fa-solid fa-robot group-hover:rotate-12 transition-transform"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 border-2 border-slate-950 animate-pulse"></span>
+        </button>
+
+        <div id="agent-chat-window" class="hidden absolute bottom-16 right-0 w-[90vw] sm:w-[380px] h-[500px] agent-window-bg rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+            <div class="p-4 bg-gradient-to-r from-brand-700 to-brand-800 text-white flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-yellow-300">
+                        <i class="fa-solid fa-headset text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Rising Starz AI Assistant</h4>
+                        <span class="text-[10px] text-red-300 font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Online & Ready</span>
+                    </div>
+                </div>
+                <button onclick="toggleAgentWindow()" class="text-white/80 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div id="agent-messages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs">
+                <div class="flex gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-robot text-xs"></i></div>
+                    <div class="theme-card p-3 rounded-2xl rounded-tl-none max-w-[80%] space-y-1">
+                        <p class="font-bold text-yellow-400">Namaste! 👋 I am Rising Starz Assistant.</p>
+                        <p>Ask me anything about fees, batch timings, results, or center locations!</p>
+                    </div>
+                </div>
+
+                <div id="quick-pills" class="flex flex-wrap gap-1.5 pt-1">
+                    <button onclick="sendQuickKeyword('fees')" class="px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-[11px] font-semibold hover:bg-brand-500/20">💰 Fee Structure</button>
+                    <button onclick="sendQuickKeyword('timings')" class="px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-[11px] font-semibold hover:bg-brand-500/20">⏰ Batch Timings</button>
+                    <button onclick="sendQuickKeyword('results')" class="px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-[11px] font-semibold hover:bg-brand-500/20">🏆 Results & Ranks</button>
+                    <button onclick="sendQuickKeyword('centers')" class="px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-[11px] font-semibold hover:bg-brand-500/20">📍 Center Locations</button>
+                </div>
+            </div>
+
+            <form onsubmit="handleAgentSubmit(event)" class="p-3 border-t border-slate-700/40 flex gap-2 shrink-0">
+                <input type="text" id="agent-input" placeholder="Type keywords (e.g. fees, timings)..." class="flex-grow px-3.5 py-2 rounded-xl theme-input text-xs focus:outline-none">
+                <button type="submit" class="px-3.5 py-2 rounded-xl bg-brand-600 text-white font-bold hover:bg-brand-500 transition"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AUTHENTICATION MODAL -->
+    <div id="auth-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" aria-describedby="auth-modal-desc">
+        <div class="theme-card max-w-4xl w-full rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-12 relative border border-slate-700/80 my-6">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition" aria-label="Close login dialog">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <!-- Left Promotional Banner -->
+            <div class="md:col-span-5 bg-gradient-to-br from-brand-700 via-brand-800 to-slate-950 p-8 text-white flex flex-col justify-between hidden md:flex relative overflow-hidden">
+                <div class="space-y-4 z-10">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-yellow-400 text-slate-950 flex items-center justify-center font-bold"><i class="fa-solid fa-bolt"></i></div>
+                        <span class="font-extrabold text-sm tracking-wider uppercase">RISING STARZ PORTAL</span>
+                    </div>
+                    <h3 id="auth-modal-title" class="text-2xl font-extrabold leading-tight">Unlock Your Rank Potential Today</h3>
+                    <p id="auth-modal-desc" class="text-xs text-slate-300 leading-relaxed">Gain access to 800+ hours of lectures, AI test analytics, daily DPP sets, and personal mentorship.</p>
+                </div>
+
+                <div class="space-y-3 text-xs z-10 pt-6 border-t border-white/10">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Personal Performance Analytics</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Daily 1-on-1 Doubt Counters</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Parent Attendance Tracker</p>
+                </div>
+            </div>
+
+            <!-- Right Form Section -->
+            <div class="md:col-span-7 p-6 sm:p-10 space-y-6">
+                <div class="flex gap-6 border-b border-slate-700/50 pb-3" role="tablist" aria-label="Authentication mode">
+                    <button id="auth-tab-login" onclick="switchAuthMode('login')" class="text-lg font-extrabold text-brand-400 border-b-2 border-brand-500 pb-1" role="tab" aria-selected="true" aria-controls="form-login">Sign In</button>
+                    <button id="auth-tab-reg" onclick="switchAuthMode('register')" class="text-lg font-extrabold theme-text-muted pb-1" role="tab" aria-selected="false" aria-controls="form-register">Create Account</button>
+                    <button id="auth-tab-forgot" onclick="switchAuthMode('forgot')" class="text-lg font-extrabold theme-text-muted pb-1" role="tab" aria-selected="false" aria-controls="form-forgot">Forgot Password</button>
+                </div>
+
+                <div id="rate-limit-alert" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold text-center"></div>
+
+                <!-- LOGIN FORM -->
+                <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4" role="tabpanel" aria-labelledby="auth-tab-login">
+                    <div>
+                        <label for="login-email" class="block text-xs font-bold theme-text-muted mb-1.5">Email Address</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="email" id="login-email" required placeholder="student@gmail.com" aria-describedby="login-error" class="w-full pl-10 pr-4 py-3 rounded-xl theme-input text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label for="login-password" class="block text-xs font-bold theme-text-muted">Password</label>
+                        </div>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="password" id="login-password" required placeholder="••••••••" aria-describedby="login-error" class="w-full pl-10 pr-4 py-3 rounded-xl theme-input text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                    </div>
+                    <button type="submit" id="login-submit-btn" class="w-full py-3.5 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg text-xs tracking-wider uppercase">Sign In to Dashboard</button>
+                    <p class="text-xs text-center theme-text-muted mb-0"><a href="#" onclick="switchAuthMode('forgot'); return false;" class="text-brand-400 hover:underline underline-offset-2">Forgot password?</a></p>
+                    <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold text-center mb-3" role="alert"></div>
+                </form>
+
+                <!-- REGISTER FORM -->
+                <form id="form-register" onsubmit="handleRegister(event)" class="space-y-3.5 hidden" role="tabpanel" aria-labelledby="auth-tab-reg">
+                    <div>
+                        <label for="reg-name" class="block text-xs font-bold theme-text-muted mb-1">Full Student Name</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="text" id="reg-name" required placeholder="e.g. Akshat Sharma" aria-describedby="register-error" class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-input text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="reg-email" class="block text-xs font-bold theme-text-muted mb-1">Email Address</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="email" id="reg-email" required placeholder="student@gmail.com" aria-describedby="register-error" class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-input text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="reg-password" class="block text-xs font-bold theme-text-muted mb-1">Password</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="password" id="reg-password" required minlength="6" placeholder="At least 6 characters" aria-describedby="register-error" class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-input text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="reg-course" class="block text-xs font-bold theme-text-muted mb-1">Select Target Course</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-graduation-cap absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <select id="reg-course" class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-input text-xs" aria-describedby="register-error">
+                                <option>JEE Main & Advanced Target</option>
+                                <option>NEET Medical Target</option>
+                                <option>Class 6th to 10th Foundation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition text-xs tracking-wider uppercase mt-2">Create Student Account</button>
+                    <div id="register-error" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold text-center mb-3" role="alert"></div>
+                </form>
+
+                <!-- FORGOT PASSWORD FORM -->
+                <form id="form-forgot" onsubmit="handleForgotPassword(event)" class="hidden space-y-4" role="tabpanel" aria-labelledby="auth-tab-forgot">
+                    <div>
+                        <label for="forgot-email" class="block text-xs font-bold theme-text-muted mb-1.5">Email Address</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-xs theme-text-muted"></i>
+                            <input type="email" id="forgot-email" required placeholder="student@gmail.com" aria-describedby="forgot-error" class="w-full pl-10 pr-4 py-3 rounded-xl theme-input text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <p class="text-xs theme-text-muted mt-1">We'll send a password reset link to your email.</p>
+                    </div>
+                    <button type="submit" id="forgot-submit-btn" class="w-full py-3.5 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg text-xs tracking-wider uppercase">Send Reset Link</button>
+                    <p class="text-xs text-center theme-text-muted mb-0"><a href="#" onclick="switchAuthMode('login'); return false;" class="text-brand-400 hover:underline underline-offset-2">Back to Sign In</a></p>
+                    <div id="forgot-error" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold text-center mb-3" role="alert"></div>
+                    <div id="forgot-success" class="hidden p-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-bold text-center mb-3" role="status"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Engine -->
+    <script src="js/ui-engine.js"></script>
+
+    <script src="js/app-functions.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script src="js/sw-register.js"></script>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-700/50 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-yellow-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-brand-400 to-yellow-400 bg-clip-text text-transparent">RISING</span>
+                            <span class="text-xs block font-bold theme-text-muted tracking-widest -mt-1">STARZ</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm theme-text-muted leading-relaxed max-w-xs">
+                        Premier coaching for JEE, NEET & Foundation. Expert mentorship, scholarship tests, and top rank results.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-extrabold text-brand-400 uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a onclick="switchTab('home')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Home</a></li>
+                        <li><a onclick="switchTab('about')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">About Us</a></li>
+                        <li><a onclick="switchTab('courses')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Courses</a></li>
+                        <li><a onclick="switchTab('centers')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Centers</a></li>
+                        <li><a onclick="switchTab('reviews')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Reviews</a></li>
+                        <li><a onclick="switchTab('gallery')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Gallery</a></li>
+                        <li><a onclick="switchTab('resources')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Resources</a></li>
+                        <li><a onclick="switchTab('contact')" class="text-xs sm:text-sm theme-text-muted hover:text-brand-400 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] focus-visible:shadow-[0_0_12px_rgba(59,130,246,0.6)] transition cursor-pointer">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-sm font-extrabold text-brand-400 uppercase tracking-wider mb-4">Study Materials</h4>
+                    <ul class="space-y-2">
+                        <li><a href="blog-neet-strategy.html" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">NEET 700+ Strategy</a></li>
+                        <li><a href="blogs/blog-jee-physics.html" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">JEE Physics Guide</a></li>
+                        <li><a href="blogs/blog-chemistry.html" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">Organic Chemistry</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">JEE Main PYQs</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">NEET PYQs</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">JEE Advanced PYQs</a></li>
+                        <li><a href="#" class="text-xs sm:text-sm theme-text-muted hover:text-yellow-400 transition">Study Notes</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-sm font-extrabold text-brand-400 uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-brand-400 mt-0.5"></i>
+                            <span class="text-xs sm:text-sm theme-text-muted">+91 1800-123-7727</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-yellow-400 mt-0.5"></i>
+                            <span class="text-xs sm:text-sm theme-text-muted">admissions@risingstarz.edu.in</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-red-400 mt-0.5"></i>
+                            <span class="text-xs sm:text-sm theme-text-muted">Plot 42, Kalu Sarai, Hauz Khas, New Delhi 110016</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-brand-400 mt-0.5"></i>
+                            <span class="text-xs sm:text-sm theme-text-muted">8:00 AM – 8:00 PM (Mon–Sat)</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 rounded-lg theme-card flex items-center justify-center text-xs theme-text-muted hover:text-brand-400 hover:border-brand-400 transition border border-slate-700 light:border-slate-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg theme-card flex items-center justify-center text-xs theme-text-muted hover:text-brand-400 hover:border-brand-400 transition border border-slate-700 light:border-slate-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg theme-card flex items-center justify-center text-xs theme-text-muted hover:text-brand-400 hover:border-brand-400 transition border border-slate-700 light:border-slate-300">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg theme-card flex items-center justify-center text-xs theme-text-muted hover:text-brand-400 hover:border-brand-400 transition border border-slate-700 light:border-slate-300">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="border-t border-slate-700/30 light:border-slate-200/50 pt-6 mb-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs sm:text-xs theme-text-muted">&copy; 2026 Rising Starz Academy. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-xs sm:text-xs text-slate-300 hover:text-brand-400 transition underline underline-offset-2">Privacy Policy</a>
+                    <a href="terms.html" class="text-xs sm:text-xs text-slate-300 hover:text-brand-400 transition underline underline-offset-2">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

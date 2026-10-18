@@ -1,0 +1,279 @@
+[debug] [2026-10-18T07:14:01.734Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:14:01.736Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:list
+[debug] [2026-10-18T07:14:01.736Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:14:01.736Z] Platform:      win32
+[debug] [2026-10-18T07:14:01.736Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:14:01.736Z] Detected Agent: open_code
+[debug] [2026-10-18T07:14:01.736Z] Time:          Sun Oct 18 2026 12:44:01 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:14:01.736Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-18T07:14:01.748Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-10-18T07:14:01.779Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:14:01.779Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:14:01.782Z] Checked if tokens are valid: false, expires at: 1791471948886
+[debug] [2026-10-18T07:14:01.783Z] Checked if tokens are valid: false, expires at: 1791471948886
+[debug] [2026-10-18T07:14:01.783Z] > refreshing access token with scopes: []
+[debug] [2026-10-18T07:14:01.785Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-18T07:14:01.786Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-18T07:14:02.041Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-18T07:14:07.865Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:14:07.867Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions --project spark-academy-1696b
+[debug] [2026-10-18T07:14:07.867Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:14:07.867Z] Platform:      win32
+[debug] [2026-10-18T07:14:07.867Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:14:07.867Z] Detected Agent: open_code
+[debug] [2026-10-18T07:14:07.867Z] Time:          Sun Oct 18 2026 12:44:07 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:14:07.867Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-18T07:14:07.881Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Akshay\Videos\Spark
+
+[debug] [2026-10-18T07:14:27.535Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-10-18T07:14:27.535Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-10-18T07:14:32.322Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:14:32.324Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions --project spark-academy-1696b
+[debug] [2026-10-18T07:14:32.324Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:14:32.324Z] Platform:      win32
+[debug] [2026-10-18T07:14:32.324Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:14:32.324Z] Detected Agent: open_code
+[debug] [2026-10-18T07:14:32.324Z] Time:          Sun Oct 18 2026 12:44:32 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:14:32.325Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Akshay\Videos\Spark
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-10-18T07:14:32.951Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:14:32.951Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:14:32.966Z] Checked if tokens are valid: false, expires at: 1791471948886
+[debug] [2026-10-18T07:14:32.966Z] Checked if tokens are valid: false, expires at: 1791471948886
+[debug] [2026-10-18T07:14:32.967Z] > refreshing access token with scopes: []
+[debug] [2026-10-18T07:14:32.968Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-18T07:14:32.968Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-18T07:14:33.120Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-18T07:14:33.120Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-18T07:14:33.149Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b [none]
+[debug] [2026-10-18T07:14:33.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b 200
+[debug] [2026-10-18T07:14:33.630Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b {"projectId":"spark-academy-1696b","projectNumber":"199578567427","displayName":"spark academy","name":"projects/spark-academy-1696b","resources":{"hostingSite":"spark-academy-1696b","realtimeDatabaseInstance":"spark-academy-1696b-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_e73c9781-683b-4c8f-854d-f415c79bab12"}
+[info] i  Using project spark-academy-1696b (spark academy) . 
+[info] 
+=== Functions Setup
+[debug] [2026-10-18T07:14:33.644Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:14:33.644Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:14:33.645Z] [iam] checking project spark-academy-1696b for permissions ["firebase.projects.get"]
+[debug] [2026-10-18T07:14:33.645Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:33.645Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:33.645Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions [none]
+[debug] [2026-10-18T07:14:33.645Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:14:33.645Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-10-18T07:14:35.058Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions 200
+[debug] [2026-10-18T07:14:35.059Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-10-18T07:14:35.060Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:35.060Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:35.062Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:35.062Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:35.062Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-10-18T07:14:35.062Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:14:35.063Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/runtimeconfig.googleapis.com [none]
+[debug] [2026-10-18T07:14:35.063Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/runtimeconfig.googleapis.com  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:14:36.854Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com 200
+[debug] [2026-10-18T07:14:36.854Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-10-18T07:14:36.854Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:36.855Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:14:36.855Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2026-10-18T07:14:36.855Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com:enable  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:14:36.857Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/runtimeconfig.googleapis.com 200
+[debug] [2026-10-18T07:14:36.857Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2026-10-18T07:14:38.796Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2026-10-18T07:14:38.796Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudfunctions.googleapis.com:enable [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[debug] [2026-10-18T07:14:55.042Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:14:55.044Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions --project spark-academy-1696b
+[debug] [2026-10-18T07:14:55.044Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:14:55.044Z] Platform:      win32
+[debug] [2026-10-18T07:14:55.044Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:14:55.044Z] Detected Agent: open_code
+[debug] [2026-10-18T07:14:55.044Z] Time:          Sun Oct 18 2026 12:44:55 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:14:55.045Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Akshay\Videos\Spark
+
+[error] 
+[error] Error: Aborted by user.
+[debug] [2026-10-18T07:15:01.591Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:15:01.593Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions --project spark-academy-1696b
+[debug] [2026-10-18T07:15:01.594Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:15:01.594Z] Platform:      win32
+[debug] [2026-10-18T07:15:01.594Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:15:01.594Z] Detected Agent: open_code
+[debug] [2026-10-18T07:15:01.594Z] Time:          Sun Oct 18 2026 12:45:01 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:15:01.594Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Akshay\Videos\Spark
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-10-18T07:15:02.251Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:15:02.251Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:15:02.262Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:15:02.262Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:15:02.264Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b [none]
+[debug] [2026-10-18T07:15:02.971Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b 200
+[debug] [2026-10-18T07:15:02.971Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spark-academy-1696b {"projectId":"spark-academy-1696b","projectNumber":"199578567427","displayName":"spark academy","name":"projects/spark-academy-1696b","resources":{"hostingSite":"spark-academy-1696b","realtimeDatabaseInstance":"spark-academy-1696b-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_e73c9781-683b-4c8f-854d-f415c79bab12"}
+[info] i  Using project spark-academy-1696b (spark academy) . 
+[info] 
+=== Functions Setup
+[debug] [2026-10-18T07:15:02.984Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:15:02.984Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:15:02.985Z] [iam] checking project spark-academy-1696b for permissions ["firebase.projects.get"]
+[debug] [2026-10-18T07:15:02.985Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:15:02.985Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:15:02.985Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions [none]
+[debug] [2026-10-18T07:15:02.986Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:15:02.986Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-10-18T07:15:04.380Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions 200
+[debug] [2026-10-18T07:15:04.380Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[debug] [2026-10-18T07:17:12.519Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:17:12.521Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --project spark-academy-1696b
+[debug] [2026-10-18T07:17:12.521Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:17:12.521Z] Platform:      win32
+[debug] [2026-10-18T07:17:12.521Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:17:12.521Z] Detected Agent: open_code
+[debug] [2026-10-18T07:17:12.521Z] Time:          Sun Oct 18 2026 12:47:12 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:17:12.522Z] ----------------------------------------------------------------------
+[debug] 
+[error] 
+[error] Error: Not in a Firebase app directory (could not locate firebase.json)
+[debug] [2026-10-18T07:17:28.818Z] ----------------------------------------------------------------------
+[debug] [2026-10-18T07:17:28.822Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Akshay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --project spark-academy-1696b
+[debug] [2026-10-18T07:17:28.823Z] CLI Version:   15.30.2
+[debug] [2026-10-18T07:17:28.823Z] Platform:      win32
+[debug] [2026-10-18T07:17:28.823Z] Node Version:  v24.19.0
+[debug] [2026-10-18T07:17:28.823Z] Detected Agent: open_code
+[debug] [2026-10-18T07:17:28.823Z] Time:          Sun Oct 18 2026 12:47:28 GMT+0530 (India Standard Time)
+[debug] [2026-10-18T07:17:28.823Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-18T07:17:30.064Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-18T07:17:30.064Z] > authorizing via signed-in user (pngoenka1975@gmail.com)
+[debug] [2026-10-18T07:17:30.064Z] [iam] checking project spark-academy-1696b for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-10-18T07:17:30.082Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:30.082Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:30.084Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions [none]
+[debug] [2026-10-18T07:17:30.085Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:30.085Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-10-18T07:17:31.490Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions 200
+[debug] [2026-10-18T07:17:31.490Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-10-18T07:17:31.490Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:31.490Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:31.491Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/spark-academy-1696b/serviceAccounts/spark-academy-1696b@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-10-18T07:17:31.491Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/spark-academy-1696b/serviceAccounts/spark-academy-1696b@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-10-18T07:17:33.122Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/spark-academy-1696b/serviceAccounts/spark-academy-1696b@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-10-18T07:17:33.122Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/spark-academy-1696b/serviceAccounts/spark-academy-1696b@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'spark-academy-1696b'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-10-18T07:17:33.127Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:33.127Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:33.127Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2026-10-18T07:17:33.127Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudresourcemanager.googleapis.com  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:34.915Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudresourcemanager.googleapis.com 200
+[debug] [2026-10-18T07:17:34.915Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2026-10-18T07:17:34.931Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:34.932Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:34.932Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b [none]
+[debug] [2026-10-18T07:17:35.336Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b 200
+[debug] [2026-10-18T07:17:35.336Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/spark-academy-1696b {"projectNumber":"199578567427","projectId":"spark-academy-1696b","lifecycleState":"ACTIVE","name":"spark academy","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-10-16T12:38:51.819Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2026-10-18T07:17:35.341Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:35.341Z] Checked if tokens are valid: true, expires at: 1792311272120
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-10-18T07:17:35.342Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:35.342Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:35.342Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com [none]
+[debug] [2026-10-18T07:17:35.342Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:35.343Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com [none]
+[debug] [2026-10-18T07:17:35.343Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:35.847Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com 200
+[debug] [2026-10-18T07:17:35.848Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2026-10-18T07:17:35.848Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:35.848Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:35.848Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2026-10-18T07:17:35.848Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com:enable  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:37.090Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com 200
+[debug] [2026-10-18T07:17:37.090Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2026-10-18T07:17:37.090Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:37.091Z] Checked if tokens are valid: true, expires at: 1792311272120
+[debug] [2026-10-18T07:17:37.091Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2026-10-18T07:17:37.091Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/artifactregistry.googleapis.com:enable  x-goog-user-project=spark-academy-1696b
+[debug] [2026-10-18T07:17:37.687Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com:enable 400
+[debug] [2026-10-18T07:17:37.687Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/spark-academy-1696b/services/cloudbuild.googleapis.com:enable [omitted]
+[error] 
+[error] Error: Your project spark-academy-1696b must be on the Blaze (pay-as-you-go) plan to complete this command. Required API cloudbuild.googleapis.com can't be enabled until the upgrade is complete. To upgrade, visit the following URL:
+
+https://console.firebase.google.com/project/spark-academy-1696b/usage/details

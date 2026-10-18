@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://risingstarz.example.com/spark.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://risingstarz.example.com/assets/og-image.jpg</image:loc>
+      <image:title>Rising Starz Academy - Premier Coaching for JEE, NEET &amp; Foundation</image:title>
+    </image:image>
+  </url>
+
+  <!-- Resources Section -->
+  <url>
+    <loc>https://risingstarz.example.com/spark.html#tab-resources</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: NEET Strategy -->
+  <url>
+    <loc>https://risingstarz.example.com/blog-neet-strategy.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://risingstarz.example.com/assets/og-image.jpg</image:loc>
+      <image:title>NEET 700+ Strategy Guide</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog: JEE Physics -->
+  <url>
+    <loc>https://risingstarz.example.com/blogs/blog-jee-physics.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://risingstarz.example.com/assets/og-image.jpg</image:loc>
+      <image:title>IIT-JEE Advanced Physics Guide</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog: Organic Chemistry -->
+  <url>
+    <loc>https://risingstarz.example.com/blogs/blog-chemistry.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://risingstarz.example.com/assets/og-image.jpg</image:loc>
+      <image:title>Organic Chemistry Mastery Guide</image:title>
+    </image:image>
+  </url>
+
+  <!-- PYQs (Previous Year Question Papers) -->
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-main-2024.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-main-2023.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-main-sample.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/neet-2024.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/neet-2023.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/neet-sample.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-advanced-2024.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-advanced-2023.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/pyqs/jee-advanced-sample.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Study Notes -->
+  <url>
+    <loc>https://risingstarz.example.com/notes/physics-chapterwise.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/physics-formulae.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/physics-pyq-compilation.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/chemistry-chapterwise.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/chemistry-mechanisms.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/chemistry-inorganic.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/mathematics-chapterwise.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/mathematics-calculus.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/mathematics-algebra.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/biology-chapterwise.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/biology-diagrams.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://risingstarz.example.com/notes/biology-pyq-compilation.pdf</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

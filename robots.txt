@@ -1,0 +1,23 @@
+# Robots.txt for Rising Starz
+# Replace risingstarz.example.com with your real domain before launch
+
+User-agent: *
+Allow: /
+
+# Allow crawling of all public pages
+Allow: /spark.html
+Allow: /blog-neet-strategy.html
+Allow: /blogs/blog-jee-physics.html
+Allow: /blogs/blog-chemistry.html
+
+# Allow crawling of resource files
+Allow: /pyqs/
+Allow: /notes/
+
+# Disallow admin/auth internals
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://risingstarz.example.com/sitemap.xml
