@@ -3,7 +3,7 @@
 
 const CACHE_NAME = 'risingstarz-v2';
 const STATIC_ASSETS = [
-    './spark.html',
+    './index.html',
     './favicon.svg',
     './sitemap.xml',
     './robots.txt',
