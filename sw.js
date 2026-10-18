@@ -1,7 +1,7 @@
 // Rising Starz Service Worker - Offline Cache
 // Replace with your real domain before production
 
-const CACHE_NAME = 'risingstarz-v2';
+const CACHE_NAME = 'risingstarz-v3';
 const STATIC_ASSETS = [
     './index.html',
     './favicon.svg',
@@ -63,7 +63,7 @@ self.addEventListener('fetch', (event) => {
                     .catch(() => {
                         // Offline fallback for pages
                         if (event.request.mode === 'navigate') {
-                            return caches.match('./spark.html');
+                            return caches.match('./index.html');
                         }
                     });
             })
