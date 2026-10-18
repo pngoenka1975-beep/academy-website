@@ -4,7 +4,6 @@
 const CACHE_NAME = 'risingstarz-v3';
 const STATIC_ASSETS = [
     './index.html',
-    './favicon.svg',
     './sitemap.xml',
     './robots.txt',
     './blog-neet-strategy.html',
